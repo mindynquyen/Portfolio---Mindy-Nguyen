@@ -1,0 +1,150 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Video & Creative Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: a quiet two-column page. The intro stays put on the left while the footage scrolls on the right. */
+:root {
+  --bg: #eff1ec;
+  --fg: #1b1f1a;
+  --muted: #646b60;
+  --line: #d3d8cd;
+  --accent: #1f5c4a;
+  --display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131612; --fg: #e9ede4; --muted: #99a193; --line: #2b3128; --accent: #8fd1b0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131612; --fg: #e9ede4; --muted: #99a193; --line: #2b3128; --accent: #8fd1b0; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6;
+  padding-block: 48px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.page { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 64px; align-items: start; }
+
+.intro { position: sticky; top: calc(48px + env(safe-area-inset-top, 0px)); display: flex; flex-direction: column; gap: 20px; }
+.name { font-size: 15px; font-weight: 600; margin: 0; }
+.intro h1 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.intro .desc { margin: 0; color: var(--muted); font-size: 16px; }
+.reach { margin: 8px 0 0; font-size: 15px; }
+.reach span { display: block; color: var(--muted); }
+
+.main { min-width: 0; display: flex; flex-direction: column; gap: 72px; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1.15; margin: 0 0 20px; }
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 16px; }
+.clip { margin: 0; min-width: 0; }
+.frame { position: relative; aspect-ratio: 9 / 16; max-width: 100%; background: #000; border-radius: 4px; overflow: hidden; }
+.frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer; }
+.play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+.play span { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.9); color: #111; display: grid; place-items: center; transition: transform .2s; }
+.play:hover span { transform: scale(1.07); }
+.play svg { width: 20px; height: 20px; margin-left: 3px; fill: currentColor; }
+.clip.playing .play { opacity: 0; }
+.clip.playing .play:focus-visible { opacity: 1; }
+.cap { margin-top: 8px; font-size: 15px; line-height: 1.35; }
+.cap small { display: block; color: var(--muted); font-size: 13px; }
+
+.more ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.more li { border-bottom: 1px solid var(--line); }
+.more a { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; color: var(--fg); text-decoration: none; }
+.more a:hover span:last-child { color: var(--accent); }
+.more span:last-child { color: var(--muted); }
+
+.about { max-width: 62ch; }
+.about p { margin: 0 0 1.1em; }
+
+.foot { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 960px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .intro { position: static; }
+  .intro h1 { font-size: clamp(40px, 10vw, 56px); }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="page">
+  <header class="intro">
+    <p class="name">Mindy Nguyen</p>
+    <h1>Video &amp; Creative Portfolio</h1>
+    <p class="desc">A collection of videos that reflect my creativity, interests, and experience in content creation. Featuring both personal and professional projects, from social media content and brand storytelling to videos I've filmed and edited for fun.</p>
+    <p class="reach"><span>Contact</span>mindynquyen@berkeley.edu</p>
+  </header>
+
+  <main class="main">
+    <section aria-labelledby="w">
+      <h2 id="w">Videos</h2>
+      <div class="grid">
+        <figure class="clip"><div class="frame"><video src="videos/clip01.mp4" poster="posters/clip01.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Arcade night"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Arcade night<small>0:17</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip02.mp4" poster="posters/clip02.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Mini golf"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Mini golf<small>0:16</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip03.mp4" poster="posters/clip03.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Suited up on campus"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Suited up on campus<small>0:07</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip04.mp4" poster="posters/clip04.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Door kick"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Door kick<small>0:16</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip05.mp4" poster="posters/clip05.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Scream if you want geem"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Scream if you want geem<small>0:05</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip06.mp4" poster="posters/clip06.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Say something to the next person"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Say something to the next person<small>0:21</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip07.mp4" poster="posters/clip07.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Bench encounter"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Bench encounter<small>0:14</small></figcaption></figure>
+        <figure class="clip"><div class="frame"><video src="videos/clip08.mp4" poster="posters/clip08.jpg" preload="none" playsinline loop></video><button class="play" aria-label="Play Hop on potato chips"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button></div><figcaption class="cap">Hop on potato chips<small>0:14</small></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="more" aria-labelledby="m">
+      <h2 id="m">More videos</h2>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1NJCdlHccaxTHFcCqd3vrtYqXEuCTF9DL/view?usp=sharing" target="_blank" rel="noopener"><span>Video 9</span><span>Watch on Google Drive ↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1MRAkleIbS3EuT22LD4AsbZh9mcZpAi2G/view?usp=sharing" target="_blank" rel="noopener"><span>Video 10</span><span>Watch on Google Drive ↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1Y3f7G7X2ihKUxXBHPRJtrHRK30T49yud/view?usp=sharing" target="_blank" rel="noopener"><span>Video 11</span><span>Watch on Google Drive ↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1rylvvjNo0L4ihJFDoV9Cw_wJizkFrcOZ/view?usp=sharing" target="_blank" rel="noopener"><span>Video 12</span><span>Watch on Google Drive ↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1IGPEk6H2EV6t3lzB_QbQankMsECcLVOm/view?usp=sharing" target="_blank" rel="noopener"><span>Video 13</span><span>Watch on Google Drive ↗</span></a></li>
+      </ul>
+    </section>
+
+    <section class="about" aria-labelledby="a">
+      <h2 id="a">About me</h2>
+      <p>My love for media started with YouTube. What began as simply watching videos and discovering creators gradually grew into an appreciation for the creativity, storytelling, and connection behind the content I enjoyed. Over time, that interest turned into a passion of my own, inspiring me to experiment with filming, editing, and creating videos that capture moments, tell stories, and connect with others.</p>
+      <p>Today, I've been able to turn that personal interest into professional experience. Through my consulting club at UC Berkeley, I'm working with GEEM, a small business, to strengthen its social media presence. From brainstorming video concepts tailored to its target audience of Millennial women to filming and editing content, I've gained firsthand experience in the strategy and creativity behind producing engaging digital media.</p>
+      <p>Whether I'm creating videos for myself or developing content for a business, I love the process of bringing an idea to life and finding ways to connect with an audience. I'm especially fascinated by how media and entertainment shape the way we see the world, share experiences, and build communities. This portfolio is a collection of that journey, bringing together my personal creativity and professional experiences.</p>
+    </section>
+
+    <p class="foot">© Mindy Nguyen</p>
+  </main>
+</div>
+
+<script>
+(function () {
+  var clips = Array.prototype.slice.call(document.querySelectorAll('.clip'));
+  clips.forEach(function (c) {
+    var v = c.querySelector('video');
+    function toggle() {
+      if (v.paused) {
+        clips.forEach(function (o) {
+          if (o !== c) { o.querySelector('video').pause(); o.classList.remove('playing'); }
+        });
+        var p = v.play();
+        c.classList.add('playing');
+        if (p && p.catch) p.catch(function () { c.classList.remove('playing'); });
+      } else {
+        v.pause();
+        c.classList.remove('playing');
+      }
+    }
+    c.querySelector('.play').addEventListener('click', toggle);
+    v.addEventListener('click', toggle);
+  });
+})();
+</script>
+
+</body></html>
